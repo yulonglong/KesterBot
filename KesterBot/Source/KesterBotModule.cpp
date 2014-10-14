@@ -11,7 +11,7 @@
 */
 
 #include "Common.h"
-#include "UAlbertaBotModule.h"
+#include "KesterBotModule.h"
 
 
 BWAPI::AIModule * __NewAIModule()

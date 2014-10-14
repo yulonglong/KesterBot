@@ -7,7 +7,7 @@
 #include <BWAPI.h>
 #include <BWTA.h>
 
-#include "UAlbertaBotModule.h"
+#include "KesterBotModule.h"
 namespace BWAPI { Game* Broodwar; }
 BOOL APIENTRY DllMain( HANDLE hModule, 
                        DWORD  ul_reason_for_call, 

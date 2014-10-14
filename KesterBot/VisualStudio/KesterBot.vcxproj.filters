@@ -60,9 +60,6 @@
     <ClCompile Include="..\Source\Common.cpp">
       <Filter>module</Filter>
     </ClCompile>
-    <ClCompile Include="..\Source\UAlbertaBotModule.cpp">
-      <Filter>module</Filter>
-    </ClCompile>
     <ClCompile Include="..\Source\MapGrid.cpp">
       <Filter>game\util\map</Filter>
     </ClCompile>
@@ -156,6 +153,9 @@
     <ClCompile Include="..\Source\ReplayVisualizer.cpp">
       <Filter>extra</Filter>
     </ClCompile>
+    <ClCompile Include="..\Source\KesterBotModule.cpp">
+      <Filter>module</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Source\CombatCommander.h">
@@ -168,9 +168,6 @@
       <Filter>game\macro\search</Filter>
     </ClInclude>
     <ClInclude Include="..\Source\Common.h">
-      <Filter>module</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Source\UAlbertaBotModule.h">
       <Filter>module</Filter>
     </ClInclude>
     <ClInclude Include="..\Source\EnhancedInterface.hpp">
@@ -277,6 +274,9 @@
     </ClInclude>
     <ClInclude Include="..\Source\ReplayVisualizer.h">
       <Filter>extra</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\KesterBotModule.h">
+      <Filter>module</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
