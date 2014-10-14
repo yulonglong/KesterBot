@@ -60,7 +60,7 @@ public:
 	{
 	}
 
-	// constructor based on a BWAPI unit, used by UAlbertaBot
+	// constructor based on a BWAPI unit, used by KesterBot
 	Unit(BWAPI::Unit * unit, const IDType & playerID, const TimeType & gameTime)
 		: _unitType(unit->getType() == BWAPI::UnitTypes::Terran_Medic ? BWAPI::UnitTypes::Terran_Marine : unit->getType())
 		, _position(Position(unit->getPosition().x(), unit->getPosition().y()))

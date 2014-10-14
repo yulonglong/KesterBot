@@ -25,7 +25,7 @@ KesterBotModule::~KesterBotModule() {}
 void KesterBotModule::onStart()
 {
 	//this will be the speed of the game, normal game speed = 30, tournament SSCAI = 20, fastest = 0;
-	BWAPI::Broodwar->setLocalSpeed(25);
+	BWAPI::Broodwar->setLocalSpeed(22);
 
 	BWAPI::Broodwar->enableFlag(BWAPI::Flag::UserInput);
 	//BWAPI::Broodwar->enableFlag(BWAPI::Flag::CompleteMapInformation);

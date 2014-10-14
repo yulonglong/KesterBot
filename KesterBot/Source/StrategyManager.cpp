@@ -213,7 +213,6 @@ void StrategyManager::onEnd(const bool isWinner)
 				results[getCurrentStrategy()].second = results[getCurrentStrategy()].second + 1;
 			}
 		}
-		
 		writeResults();
 	}
 }

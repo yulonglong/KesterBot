@@ -2,10 +2,10 @@
 
 namespace Options
 {
-	namespace Modules							// toggle various modules of UAlbertaBot, must be const
+	namespace Modules							// toggle various modules of KesterBot, must be const
 	{
-		const bool USING_GAMECOMMANDER			= true;	// toggle GameCommander, effectively UAlbertaBot
-		const bool USING_ENHANCED_INTERFACE		= false;	// toggle EnhancedUI, not needed for UAlbertaBot
+		const bool USING_GAMECOMMANDER			= true;	// toggle GameCommander, effectively KesterBot
+		const bool USING_ENHANCED_INTERFACE		= false;	// toggle EnhancedUI, not needed for KesterBot
 		const bool USING_REPLAY_VISUALIZER		= false;		// cannot be on while gamecommander is on
 		const bool USING_MICRO_SEARCH			= false;	// toggle use of Micro Search, if false script used
 		const bool USING_MACRO_SEARCH			= true;		// toggle use of Build Order Search, currently no backup
@@ -24,7 +24,7 @@ namespace Options
 
 	namespace Debug								// debugging options
 	{
-		bool DRAW_KESTERBOT_DEBUG				= true;		// draws debug information for UAlbertaBot
+		bool DRAW_KESTERBOT_DEBUG				= true;		// draws debug information for KesterBot
 		bool DRAW_DEBUG_INTERFACE				= false;		// draws debug information for EnhancedUI
 
 		BWAPI::Color COLOR_LINE_TARGET			= BWAPI::Colors::White;
