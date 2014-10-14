@@ -16,13 +16,13 @@
 
 BWAPI::AIModule * __NewAIModule()
 {
-	return new UAlbertaBotModule();
+	return new KesterBotModule();
 }
 
-UAlbertaBotModule::UAlbertaBotModule()  {}
-UAlbertaBotModule::~UAlbertaBotModule() {}
+KesterBotModule::KesterBotModule()  {}
+KesterBotModule::~KesterBotModule() {}
 
-void UAlbertaBotModule::onStart()
+void KesterBotModule::onStart()
 {
 	BWAPI::Broodwar->setLocalSpeed(0);
 
@@ -43,7 +43,7 @@ void UAlbertaBotModule::onStart()
 	}
 }
 
-void UAlbertaBotModule::onEnd(bool isWinner) 
+void KesterBotModule::onEnd(bool isWinner) 
 {
 	if (Options::Modules::USING_GAMECOMMANDER)
 	{
@@ -58,7 +58,7 @@ void UAlbertaBotModule::onEnd(bool isWinner)
 	}
 }
 
-void UAlbertaBotModule::onFrame()
+void KesterBotModule::onFrame()
 {
 	if (Options::Modules::USING_GAMECOMMANDER) 
 	{ 
@@ -92,18 +92,18 @@ void UAlbertaBotModule::onFrame()
 	//Visualizer::Instance().onFrame();
 }
 
-void UAlbertaBotModule::onUnitDestroy(BWAPI::Unit * unit)
+void KesterBotModule::onUnitDestroy(BWAPI::Unit * unit)
 {
 	if (Options::Modules::USING_GAMECOMMANDER) { gameCommander.onUnitDestroy(unit); }
 	if (Options::Modules::USING_ENHANCED_INTERFACE) { eui.onUnitDestroy(unit); }
 }
 
-void UAlbertaBotModule::onUnitMorph(BWAPI::Unit * unit)
+void KesterBotModule::onUnitMorph(BWAPI::Unit * unit)
 {
 	if (Options::Modules::USING_GAMECOMMANDER) { gameCommander.onUnitMorph(unit); }
 }
 
-void UAlbertaBotModule::onSendText(std::string text) 
+void KesterBotModule::onSendText(std::string text) 
 { 
 	BWAPI::Broodwar->sendText(text.c_str());
 
@@ -134,22 +134,22 @@ void UAlbertaBotModule::onSendText(std::string text)
 	}
 }
 
-void UAlbertaBotModule::onUnitCreate(BWAPI::Unit * unit)
+void KesterBotModule::onUnitCreate(BWAPI::Unit * unit)
 { 
 	if (Options::Modules::USING_GAMECOMMANDER) { gameCommander.onUnitCreate(unit); }
 }
 
-void UAlbertaBotModule::onUnitShow(BWAPI::Unit * unit)
+void KesterBotModule::onUnitShow(BWAPI::Unit * unit)
 { 
 	if (Options::Modules::USING_GAMECOMMANDER) { gameCommander.onUnitShow(unit); }
 }
 
-void UAlbertaBotModule::onUnitHide(BWAPI::Unit * unit)
+void KesterBotModule::onUnitHide(BWAPI::Unit * unit)
 { 
 	if (Options::Modules::USING_GAMECOMMANDER) { gameCommander.onUnitHide(unit); }
 }
 
-void UAlbertaBotModule::onUnitRenegade(BWAPI::Unit * unit)
+void KesterBotModule::onUnitRenegade(BWAPI::Unit * unit)
 { 
 	if (Options::Modules::USING_GAMECOMMANDER) { gameCommander.onUnitRenegade(unit); }
 }
