@@ -1,12 +1,12 @@
 /* 
  +----------------------------------------------------------------------+
- | UAlbertaBot                                                          |
+ | KesterBot                                                            |
  +----------------------------------------------------------------------+
- | University of Alberta - AIIDE StarCraft Competition                  |
+ | National University of Singapore                                     |
  +----------------------------------------------------------------------+
  |                                                                      |
  +----------------------------------------------------------------------+
- | Author: David Churchill <dave.churchill@gmail.com>                   |
+ | Author: Steven Kester Yuwono <a0080415@nus.edu.sg>                   |
  +----------------------------------------------------------------------+
 */
 
@@ -24,7 +24,8 @@ KesterBotModule::~KesterBotModule() {}
 
 void KesterBotModule::onStart()
 {
-	BWAPI::Broodwar->setLocalSpeed(0);
+	//this will be the speed of the game, normal game speed = 30, tournament SSCAI = 20, fastest = 0;
+	BWAPI::Broodwar->setLocalSpeed(25);
 
 	BWAPI::Broodwar->enableFlag(BWAPI::Flag::UserInput);
 	//BWAPI::Broodwar->enableFlag(BWAPI::Flag::CompleteMapInformation);

@@ -323,7 +323,7 @@ void MicroSearchManager::smartMove(BWAPI::Unit * attacker, BWAPI::Position targe
 	attackAnimData[attacker] = AnimData(false, BWAPI::Broodwar->getFrameCount(), BWAPI::UnitCommandTypes::Move, BWAPI::Broodwar->getFrameCount());
 	attacker->move(targetPosition);
 
-	if (Options::Debug::DRAW_UALBERTABOT_DEBUG) 
+	if (Options::Debug::DRAW_KESTERBOT_DEBUG) 
 	{
 		BWAPI::Broodwar->drawLineMap(attacker->getPosition().x(), attacker->getPosition().y(),
 									 targetPosition.x(), targetPosition.y(), BWAPI::Colors::Orange);

@@ -17,7 +17,7 @@ Squad::update()
 	const bool needToRegroup(needsToRegroup());
 	
 	// draw some debug info
-	if (Options::Debug::DRAW_UALBERTABOT_DEBUG && order.type == SquadOrder::Attack) 
+	if (Options::Debug::DRAW_KESTERBOT_DEBUG && order.type == SquadOrder::Attack) 
 	{
 		BWAPI::Broodwar->drawTextScreen(200, 330, "%s", regroupStatus.c_str());
 
@@ -98,11 +98,11 @@ Squad::setNearEnemyUnits()
 		nearEnemy[unit] = unitNearEnemy(unit);
 		if (nearEnemy[unit])
 		{
-			if (Options::Debug::DRAW_UALBERTABOT_DEBUG) BWAPI::Broodwar->drawBoxMap(x-left, y - top, x + right, y + bottom, Options::Debug::COLOR_UNIT_NEAR_ENEMY);
+			if (Options::Debug::DRAW_KESTERBOT_DEBUG) BWAPI::Broodwar->drawBoxMap(x-left, y - top, x + right, y + bottom, Options::Debug::COLOR_UNIT_NEAR_ENEMY);
 		}
 		else
 		{
-			if (Options::Debug::DRAW_UALBERTABOT_DEBUG) BWAPI::Broodwar->drawBoxMap(x-left, y - top, x + right, y + bottom, Options::Debug::COLOR_UNIT_NOTNEAR_ENEMY);
+			if (Options::Debug::DRAW_KESTERBOT_DEBUG) BWAPI::Broodwar->drawBoxMap(x-left, y - top, x + right, y + bottom, Options::Debug::COLOR_UNIT_NOTNEAR_ENEMY);
 		}
 	}
 }

@@ -130,12 +130,12 @@ void MapGrid::update()
 {
 	for (int i=0; i<cols; i++) 
 	{
-		if (Options::Debug::DRAW_UALBERTABOT_DEBUG) BWAPI::Broodwar->drawLineMap(i*cellSize, 0, i*cellSize, mapHeight, BWAPI::Colors::Blue);
+		if (Options::Debug::DRAW_KESTERBOT_DEBUG) BWAPI::Broodwar->drawLineMap(i*cellSize, 0, i*cellSize, mapHeight, BWAPI::Colors::Blue);
 	}
 
 	for (int j=0; j<rows; j++) 
 	{
-		if (Options::Debug::DRAW_UALBERTABOT_DEBUG) BWAPI::Broodwar->drawLineMap(0, j*cellSize, mapWidth, j*cellSize, BWAPI::Colors::Blue);
+		if (Options::Debug::DRAW_KESTERBOT_DEBUG) BWAPI::Broodwar->drawLineMap(0, j*cellSize, mapWidth, j*cellSize, BWAPI::Colors::Blue);
 	}
 
 	for (int r=0; r < rows; ++r)
@@ -144,8 +144,8 @@ void MapGrid::update()
 		{
 			GridCell & cell = getCellByIndex(r,c);
 			
-			if (Options::Debug::DRAW_UALBERTABOT_DEBUG) BWAPI::Broodwar->drawTextMap(cell.center.x(), cell.center.y(), "Last Seen %d", cell.timeLastVisited);
-			if (Options::Debug::DRAW_UALBERTABOT_DEBUG) BWAPI::Broodwar->drawTextMap(cell.center.x(), cell.center.y()+10, "Row/Col (%d, %d)", r, c);
+			if (Options::Debug::DRAW_KESTERBOT_DEBUG) BWAPI::Broodwar->drawTextMap(cell.center.x(), cell.center.y(), "Last Seen %d", cell.timeLastVisited);
+			if (Options::Debug::DRAW_KESTERBOT_DEBUG) BWAPI::Broodwar->drawTextMap(cell.center.x(), cell.center.y()+10, "Row/Col (%d, %d)", r, c);
 		}
 	}
 

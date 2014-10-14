@@ -92,7 +92,7 @@ void MapTools::update()
 	if (nextExp != BWAPI::TilePositions::None)
 	{
 		BWAPI::Position exp = BWAPI::Position(getNextExpansion());
-		if (Options::Debug::DRAW_UALBERTABOT_DEBUG) BWAPI::Broodwar->drawBoxMap(exp.x(), exp.y(), exp.x()+4*32, exp.y()+3*32, BWAPI::Colors::Green, true);
+		if (Options::Debug::DRAW_KESTERBOT_DEBUG) BWAPI::Broodwar->drawBoxMap(exp.x(), exp.y(), exp.x()+4*32, exp.y()+3*32, BWAPI::Colors::Green, true);
 	}
 
 	// draws distance map to screen
@@ -102,7 +102,7 @@ void MapTools::update()
 		{
 			BWAPI::Position p(x*32, y*32);
 
-			if (Options::Debug::DRAW_UALBERTABOT_DEBUG) BWAPI::Broodwar->drawTextMap(p.x(), p.y(), "%d", getMyBaseDistance(p));
+			if (Options::Debug::DRAW_KESTERBOT_DEBUG) BWAPI::Broodwar->drawTextMap(p.x(), p.y(), "%d", getMyBaseDistance(p));
 		}
 	}*/
 
@@ -118,8 +118,8 @@ void MapTools::update()
 				c = BWAPI::Colors::Green;
 			}
 
-			if (Options::Debug::DRAW_UALBERTABOT_DEBUG) BWAPI::Broodwar->drawCircleMap(unit->getPosition().x(), unit->getPosition().y(), 3, c);
-			//if (Options::Debug::DRAW_UALBERTABOT_DEBUG) BWAPI::Broodwar->drawTextMap(unit->getPosition().x(), unit->getPosition().y(), "%s", unit->getType().getName().c_str());
+			if (Options::Debug::DRAW_KESTERBOT_DEBUG) BWAPI::Broodwar->drawCircleMap(unit->getPosition().x(), unit->getPosition().y(), 3, c);
+			//if (Options::Debug::DRAW_KESTERBOT_DEBUG) BWAPI::Broodwar->drawTextMap(unit->getPosition().x(), unit->getPosition().y(), "%s", unit->getType().getName().c_str());
 		}
 	}
 
@@ -148,7 +148,7 @@ void MapTools::drawMyRegion()
 					c = BWAPI::Colors::Red;
 				}
 
-				if (Options::Debug::DRAW_UALBERTABOT_DEBUG) BWAPI::Broodwar->drawCircleMap(i*32+16, j*32+16, 5, c);
+				if (Options::Debug::DRAW_KESTERBOT_DEBUG) BWAPI::Broodwar->drawCircleMap(i*32+16, j*32+16, 5, c);
 			}
 		}
 	}

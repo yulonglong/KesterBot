@@ -70,7 +70,7 @@ void GameCommander::drawDebugInterface()
 	combatCommander.drawSquadInformation(200, 30);
 
 	// draw position of mouse cursor
-	if (Options::Debug::DRAW_UALBERTABOT_DEBUG)
+	if (Options::Debug::DRAW_KESTERBOT_DEBUG)
 	{
 		BWAPI::Broodwar->drawTextScreen(20, 20, "Frame: %7d\nTime: %4dm %3ds", BWAPI::Broodwar->getFrameCount(), BWAPI::Broodwar->getFrameCount()/(24*60), (BWAPI::Broodwar->getFrameCount()/24)%60);
 		int mouseX = BWAPI::Broodwar->getMousePosition().x() + BWAPI::Broodwar->getScreenPosition().x();
