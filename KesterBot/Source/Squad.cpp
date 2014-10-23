@@ -181,7 +181,7 @@ Squad::needsToRegroup()
 	
 	std::pair<ScoreType, ScoreType> score = sim.simulateCombat();
 
-	bool retreat = score.first < 0 && score.second < 0;
+	bool retreat = score.first < 0 && score.second < -200;
 	if (retreat)
 	{
 		regroupStatus = std::string("\x04 Retreat - simulation predicts defeat");

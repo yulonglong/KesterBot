@@ -666,11 +666,11 @@ const AlphaBetaScore GameState::eval(const IDType & player, const IDType & evalM
 
 	if (playerDead(enemyPlayer) && !playerDead(player))
 	{
-		winBonus = 100000;
+		winBonus = 500;
 	}
 	else if (playerDead(player) && !playerDead(enemyPlayer))
 	{
-		winBonus = -100000;
+		winBonus = -500;
 	}
 
 	return AlphaBetaScore(score.val() + winBonus, score.numMoves());
