@@ -108,6 +108,17 @@ int MeleeManager::getAttackPriority(BWAPI::Unit * unit)
 	{
 		return 9;
 	} 
+	// next is buildings that can produce armies to attack us
+	else if ((type == BWAPI::UnitTypes::Protoss_Gateway) ||
+		(type == BWAPI::UnitTypes::Protoss_Stargate) ||
+		(type == BWAPI::UnitTypes::Protoss_Robotics_Facility) ||
+		(type == BWAPI::UnitTypes::Zerg_Hatchery) ||
+		(type == BWAPI::UnitTypes::Terran_Barracks) ||
+		(type == BWAPI::UnitTypes::Terran_Factory) ||
+		(type == BWAPI::UnitTypes::Terran_Starport))
+	{
+		return 8;
+	} 
 	// next is special buildings
 	else if (type == BWAPI::UnitTypes::Protoss_Pylon || type == BWAPI::UnitTypes::Zerg_Spire)
 	{
