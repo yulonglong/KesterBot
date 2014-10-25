@@ -652,6 +652,10 @@ const AlphaBetaScore GameState::eval(const IDType & player, const IDType & evalM
 	{
 		score = AlphaBetaScore(evalSumDPS(player), 0);
 	}
+	else if (evalMethod == Search::EvaluationMethods::SumPureDPS)
+	{
+		score = AlphaBetaScore(evalSumPureDPS(player), 0);
+	}
 	else if (evalMethod == Search::EvaluationMethods::ModelSimulation)
 	{
 		score = evalSim(player, simMethod);
@@ -666,11 +670,11 @@ const AlphaBetaScore GameState::eval(const IDType & player, const IDType & evalM
 
 	if (playerDead(enemyPlayer) && !playerDead(player))
 	{
-		winBonus = 500;
+		winBonus = 200;
 	}
 	else if (playerDead(player) && !playerDead(enemyPlayer))
 	{
-		winBonus = -500;
+		winBonus = -200;
 	}
 
 	return AlphaBetaScore(score.val() + winBonus, score.numMoves());
@@ -690,6 +694,15 @@ const ScoreType GameState::evalSumDPS(const IDType & player) const
 	const IDType enemyPlayer(getEnemy(player));
 
 	return sumDPS(player) - sumDPS(enemyPlayer);
+}
+
+// evaluate the state for _playerToMove
+// for KesterBot
+const ScoreType GameState::evalSumPureDPS(const IDType & player) const
+{
+	const IDType enemyPlayer(getEnemy(player));
+
+	return sumPureDPS(player) - sumPureDPS(enemyPlayer);
 }
 
 const AlphaBetaScore GameState::evalSim(const IDType & player, const IDType & method) const
@@ -741,6 +754,28 @@ const ScoreType	GameState::sumDPS(const IDType & player) const
 	}
 
 	ScoreType ret = (ScoreType)(1000 * sum / _totalSumSQRT[player]);
+
+	return ret;
+}
+
+//for KesterBot
+const ScoreType	GameState::sumPureDPS(const IDType & player) const
+{
+	if (numUnits(player) == 0)
+	{
+		return 0;
+	}
+
+	float sum(0);
+
+	for (IDType u(0); u<numUnits(player); ++u)
+	{
+		const Unit & unit(getUnit(player, u));
+
+		sum += unit.dpf();
+	}
+
+	ScoreType ret = (ScoreType)(100*sum);
 
 	return ret;
 }

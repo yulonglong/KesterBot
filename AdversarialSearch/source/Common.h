@@ -35,7 +35,7 @@ namespace Search
 
 	namespace EvaluationMethods
 	{
-		enum { SumHP, SumDPS, ModelSimulation, LTD2Bonus };
+		enum { SumHP, SumDPS, SumPureDPS, ModelSimulation, LTD2Bonus }; //SumPureDPS for KesterBot
 		extern std::vector<std::string> names;
 	}
 

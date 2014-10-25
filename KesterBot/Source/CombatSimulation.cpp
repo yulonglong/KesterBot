@@ -75,8 +75,8 @@ std::pair<ScoreType, ScoreType> CombatSimulation::simulateCombat()
 	gameOptimistic.playScripts();
 	gamePessimistic.playScripts();
 	
-	ScoreType evalOptimistic =  gameOptimistic.getState().eval(Search::Players::Player_One, Search::EvaluationMethods::SumDPS).val();
-	ScoreType evalPessimistic = gamePessimistic.getState().eval(Search::Players::Player_One, Search::EvaluationMethods::SumDPS).val();
+	ScoreType evalOptimistic =  gameOptimistic.getState().eval(Search::Players::Player_One, Search::EvaluationMethods::SumPureDPS).val();
+	ScoreType evalPessimistic = gamePessimistic.getState().eval(Search::Players::Player_One, Search::EvaluationMethods::SumPureDPS).val();
 
 	BWAPI::Broodwar->drawTextScreen(240, 280, "Optimistic : %d", evalOptimistic);
 	BWAPI::Broodwar->drawTextScreen(240, 295, "Pessimistic: %d", evalPessimistic);

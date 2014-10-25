@@ -62,8 +62,10 @@ public:
 								 const IDType simMethod = Search::PlayerModels::AttackClosest)		const;
 	const ScoreType			evalSumHP(const IDType & player)										const;
 	const ScoreType			evalSumDPS(const IDType & player)										const;
+	const ScoreType			evalSumPureDPS(const IDType & player)									const; //for KesterBot
 	const ScoreType			sumHP(const IDType & player)											const;
 	const ScoreType			sumDPS(const IDType & player)											const;
+	const ScoreType			sumPureDPS(const IDType & player)										const; //for KesterBot
 	const AlphaBetaScore	evalSim(const IDType & player, const IDType & method)					const;
 	const IDType			getEnemy(const IDType & player)											const;
 	const HashType			calculateHash(const size_t & hashNum)									const;
