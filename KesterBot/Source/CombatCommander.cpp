@@ -200,7 +200,7 @@ void CombatCommander::assignAttackRegion(std::set<BWAPI::Unit *> & unitsToAssign
 			UnitVector combatUnits(unitsToAssign.begin(), unitsToAssign.end());
 			unitsToAssign.clear();
 
-			squadData.addSquad(Squad(combatUnits, SquadOrder(SquadOrder::Attack, enemyRegion->getCenter(), 1000, "Attack Region")));
+			squadData.addSquad(Squad(combatUnits, SquadOrder(SquadOrder::Attack, enemyRegion->getCenter(), 500, "Attack Region")));
 		}
 	}
 }
@@ -216,7 +216,7 @@ void CombatCommander::assignAttackVisibleUnits(std::set<BWAPI::Unit *> & unitsTo
 			UnitVector combatUnits(unitsToAssign.begin(), unitsToAssign.end());
 			unitsToAssign.clear();
 
-			squadData.addSquad(Squad(combatUnits, SquadOrder(SquadOrder::Attack, unit->getPosition(), 1000, "Attack Visible")));
+			squadData.addSquad(Squad(combatUnits, SquadOrder(SquadOrder::Attack, unit->getPosition(), 500, "Attack Visible")));
 
 			return;
 		}
@@ -235,7 +235,7 @@ void CombatCommander::assignAttackKnownBuildings(std::set<BWAPI::Unit *> & units
 			UnitVector combatUnits(unitsToAssign.begin(), unitsToAssign.end());
 			unitsToAssign.clear();
 
-			squadData.addSquad(Squad(combatUnits, SquadOrder(SquadOrder::Attack, ui.lastPosition, 1000, "Attack Known")));
+			squadData.addSquad(Squad(combatUnits, SquadOrder(SquadOrder::Attack, ui.lastPosition, 500, "Attack Known")));
 			return;	
 		}
 	}
@@ -248,7 +248,7 @@ void CombatCommander::assignAttackExplore(std::set<BWAPI::Unit *> & unitsToAssig
 	UnitVector combatUnits(unitsToAssign.begin(), unitsToAssign.end());
 	unitsToAssign.clear();
 
-	squadData.addSquad(Squad(combatUnits, SquadOrder(SquadOrder::Attack, MapGrid::Instance().getLeastExplored(), 1000, "Attack Explore")));
+	squadData.addSquad(Squad(combatUnits, SquadOrder(SquadOrder::Attack, MapGrid::Instance().getLeastExplored(), 500, "Attack Explore")));
 }
 
 BWAPI::Unit* CombatCommander::findClosestDefender(std::set<BWAPI::Unit *> & enemyUnitsInRegion, const std::set<BWAPI::Unit *> & units) 
